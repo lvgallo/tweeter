@@ -1,0 +1,31 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #005bdb;
+  background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+   display: flex;
+  flex-direction: column;
+  align-items: center
+ }
+ .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center 
+}
+/* .name {
+  display: flex;
+  justify-content: center;
+  color: yellow;
+} */
+.firstName {
+  font-family:Source Sans Pro;
+  font-weight: 600;
+  justify-content: center;
+  color: white;
+}
+.lastName {
+  font-family: Source Sans Pro;
+  font-weight: 300;
+  justify-content: center;
+  color: White;
+}
