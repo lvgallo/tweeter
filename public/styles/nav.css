@@ -2,13 +2,14 @@ nav {
   height: 120px;
   width: 100%;
   color: #FFFFFF ;
-  background-color: #4056A1;
+  background-color: #005bdb;
   padding: 0px 1.5em;
   display: flex;
   justify-content: space-between 
  }
  .tweeter {
   font-family: 'Bungee', cursive; 
+  font-size: 24px;
   display: flex; 
   align-items: center 
  }
