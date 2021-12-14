@@ -1,0 +1,29 @@
+nav {
+  height: 120px;
+  width: 100%;
+  color: #FFFFFF ;
+  background-color: #4056A1;
+  padding: 0px 1.5em;
+  display: flex;
+  justify-content: space-between 
+ }
+ .tweeter {
+  font-family: 'Bungee', cursive; 
+  display: flex; 
+  align-items: center 
+ }
+.blockEnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+
+}
+ .newTweet {
+   font-family: 'Source Sans Pro', sans-serif;
+   display: flex
+  }
+  .angledDoubleDown {
+    color: red;
+    display: flex;
+    justify-content: center
+  }
