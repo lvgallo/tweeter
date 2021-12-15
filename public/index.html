@@ -20,47 +20,88 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
-
+  
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="tweeter">Tweeter</span>
-     
       <span class= "blockEnd">
         <span class="newTweet"><strong>Write&nbsp</strong>a new tweet </span> 
-        <span class="angledDoubleDown"><i class="fas fa-angle-double-down"></i></span>
+        <i class="fas fa-angle-double-down"></i>
       </span>
     </nav>
-    <header>
-      <div class="logo">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="name">
-          <h2><span class="firstName">Luciana&nbsp</span><span class="lastName">Gallo</span></h2>
-      </div>
-  </header>    
-
+    
+    <header id="logoName">
+      <img src="/images/profile-hex.png"> 
+      <h2 class="name">
+        <span class="firstName">Luciana&nbsp</span>
+        <span class="lastName">Gallo</span>
+      </h2>
+    </header>    
+    
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="main-container">
       <section class="new-tweet">
-            <form class="compose-tweet" method="POST" action="/tweets" enctype="application/x-www-form-urlencoded" >
+        <form class="compose-tweet" method="POST" action="/tweets" enctype="application/x-www-form-urlencoded" >
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="buttonCounter">
-          
             <button type="submit">Tweet</button>
-            
             <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+
+        <article class='tweet'>
+          <header>
+            <div class="userLogo"> <img class="avatar" src="/images/avatar1.png">
+            <name>Rilo James</name>
             </div>
-          </form>
-      </section>
-    </main>
+            <span class="account">@RJames</span>
+          </header>
+          <span class='content'>
+            To be or not to be 
+          </span>
+          <footer>10 days ago  
+            <div class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+
+        <article class='tweet'>
+          <header>
+            <div class="userLogo"> <img  class="avatar" src="/images/avatar2.png"> 
+            <name>Jordana Rocks</name>
+          </div>
+          <span class="account">@RockStones</span>
+          </header>
+          <span class='content'>
+Chicken or egg... Who came first???
+
+</span>
+          <footer>13 days ago  
+            <div class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+
+          
+
+        </section>
+      </main>
+
+      
+      <!-- External JS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+      <!-- App JS -->
+      <script type="text/javascript" src="/scripts/client.js"></script>
+      <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>
