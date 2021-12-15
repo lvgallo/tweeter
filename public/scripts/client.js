@@ -5,11 +5,23 @@
  */
 
 // Fake data taken from initial-tweets.json
-$ (document).ready(function () {
- 
-  const data = [
-    {
-      "user": {
+$(document).ready(function () {
+  $('.compose.tweet').submit((function(event) {
+    event.preventDefault();
+    console.log('FORM SUBMITTED');
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: $(this).serialize(),
+      sucess: function(data) {
+        console.log('SUCESS!');
+      }
+    })
+  })
+
+const data = [
+  {
+    "user": {
       "name": "Newton",
       "avatars": "https://i.imgur.com/73hZDYK.png",
       "handle": "@SirIsaac"
@@ -19,17 +31,17 @@ $ (document).ready(function () {
     },
     "created_at": 1461116232227
   },
-    {
-      "user": {
+  {
+    "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
       "handle": "@rd" },
-    "content": {
+      "content": {
       "text": "Je pense , donc je suis"
     },
     "created_at": 1461113959088
   }
-  ];
+];
 
   const createTweetElement = function (data) {
     const time = timeago.format(data.created_at);
@@ -41,9 +53,9 @@ $ (document).ready(function () {
     </div>
     <span class="account">${data.user.handle}</span>
     </header>
-  
+    
     <span class='content'>${data.content.text}</span>
-  
+    
     <footer> ${time}
     <div class="icons">
     <i class="fas fa-flag"></i>
@@ -65,5 +77,11 @@ $ (document).ready(function () {
     }
   }
   renderTweets(data);
+
+  
+   
+
+  
+ 
 
 });
