@@ -30,7 +30,7 @@ $(document).ready(function() {
   "created_at": 1461113959088
 }
 ];
-
+  
 const createTweetElement = function(data) {
   const time = timeago.format(data.created_at);
   const tweetElement = 
@@ -42,7 +42,7 @@ const createTweetElement = function(data) {
     <span class="account">${data.user.handle}</span>
     </header>
     
-    <span class='content'>${data.content.text}</span>
+    <span class='content'>${escape(data.content.text)}</span>
     
     <footer> ${time}
     <div class="icons">
@@ -55,6 +55,7 @@ const createTweetElement = function(data) {
     `;
     return tweetElement;
   }
+
   const renderTweets = function(data) {
     // loops through tweetss
     for (let tweet of data) {
@@ -65,33 +66,28 @@ const createTweetElement = function(data) {
     }
   }
      
-  
   $('.compose-tweet').submit(function(event) {
+    $(".error").css("display", "none");
     event.preventDefault();
     const dataSerialized = $(this).serialize();
     if (dataSerialized === 'text=') {
-      alert("Did you write a message?");
-      return
+      $(".error").text("Did you write a message?").slideDown();
     } else if (dataSerialized.length > 140) {
-      alert("Too long! Your post should have no more than 140 characters!");
-      return
+      $(".error").text("Too long! Your post should have no more than 140 characters!").slideDown();
     } else {
-    $.ajax({
-        url: '/tweets/',
-        method: 'POST',
-        data: dataSerialized
-        // sucess: function(data) {
-        //   loadTweets(data)
-        // }
+      $.ajax({
+          url: '/tweets/',
+          method: 'POST',
+          data: dataSerialized
+          })
+        .done(function(){
+          $('#tweets-container').empty()
+          $('.compose-tweet').trigger("reset");
+          $('.counter').text(140);
+        loadTweets()
         })
-      .done(function(){
-        $('#tweets-container').empty()
-        $('.compose-tweet').trigger("reset");
-        $('.counter').text(140);
-       loadTweets()
-      })
-  }
-})
+    }
+  })
 
   const loadTweets = function () {
     $.ajax({
@@ -100,8 +96,15 @@ const createTweetElement = function(data) {
     }).done(function (tweet) {
       renderTweets(tweet);
     });
-    };
+  };
   
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-    loadTweets()
-  });
+  loadTweets()
+});
+
+  
