@@ -1,8 +1,9 @@
 .new-tweet {
-display: flex;
-flex-direction: column;
-margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
+
 textarea {
   border: 0;
   background: transparent;
@@ -12,23 +13,25 @@ textarea {
   border-bottom: 1px solid rgba(7, 7, 7, 0.918);
   outline: 0;
   resize: none
-  
 }
-.buttonCounter{
+
+.buttonCounter {
   display: flex;
   justify-content: space-between;
   flex-direction: row
 }
-button{
+
+button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
   background-color: #005bdb;
-  color: white
-
+  color: white;
+  border-radius: 8px;
 }
-.counter{
+
+.counter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -47,11 +50,12 @@ article {
   flex-direction: column;
   font-family:Source Sans Pro;
   font-weight: 300;
-  }
+}
 
-  article:hover {
-    box-shadow: 8px 8px rgb(105, 125, 214);
-  }
+article:hover {
+  box-shadow: 8px 8px rgb(105, 125, 214);
+}
+
 article.tweet header {
   height: 70px;
   display: flex;
@@ -65,8 +69,9 @@ article.tweet header {
   flex-direction:row;
   align-items: center;
   gap: 5px;
-  
+  font-weight: 600;
 } 
+
 .avatar {
   display: flex;
   height: 45px;
@@ -80,28 +85,21 @@ article.tweet header {
 .content {
   border-bottom: 1px solid rgba(7, 7, 7, 0.918);
   padding: 5px;
-  
- }
+}
+
 article.tweet footer {
-  font-size: 18px;
+  font-size: 15px;
   height: 30px;
   margin-top: 5px;
   display: flex;
   flex-direction: row; 
   justify-content: space-between;
- 
- 
 } 
-.fa-user-tie {
-  display: flex;
-  color: gray;
-  font-size: 45px;
-}
+
 .icons {
   display: flex;
   flex-direction: row;
   gap: 5px
-
 }
 
 .fa-flag {
@@ -115,6 +113,7 @@ article.tweet footer {
 .fa-heart{
   color: #005bdb; 
 }
+
 .fa-flag:hover {
   color: #b6ab15; 
 }
@@ -125,4 +124,17 @@ article.tweet footer {
 
 .fa-heart:hover {
   color:#b6ab15; 
+}
+
+.error {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #eec2c2;
+  border-color: #a94442;
+  color: #a94442;
+  display: none;
+  font-weight: 600;
+  justify-items: space-around;
 }
