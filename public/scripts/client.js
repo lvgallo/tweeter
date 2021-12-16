@@ -61,7 +61,7 @@ const createTweetElement = function(data) {
       // calls createTweetElement for each tweet
       const showTweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $('#tweets-container').append(showTweet);
+      $('#tweets-container').prepend(showTweet);
     }
   }
      
@@ -86,6 +86,8 @@ const createTweetElement = function(data) {
         })
       .done(function(){
         $('#tweets-container').empty()
+        $('.compose-tweet').trigger("reset");
+        $('.counter').text(140);
        loadTweets()
       })
   }
