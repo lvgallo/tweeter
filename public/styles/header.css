@@ -1,31 +1,35 @@
-header {
+/* Tablet style - between 768px to 1024px */
+
+#logoName {
   height: 400px;
   width: 100%;
   background-color: #005bdb;
   background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
-   display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center
- }
- .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center 
+  align-items: center; 
+  justify-content:center;  
+  margin-top: 120px; 
 }
-/* .name {
-  display: flex;
-  justify-content: center;
-  color: yellow;
-} */
+
 .firstName {
   font-family:Source Sans Pro;
   font-weight: 600;
-  justify-content: center;
   color: white;
 }
+
 .lastName {
   font-family: Source Sans Pro;
   font-weight: 300;
-  justify-content: center;
   color: White;
+}
+
+/* Desktop style - 1024px and above */
+@media only screen and (min-width: 1024px) {
+  #logoName {
+    width: 33%;
+    margin-top: 150px; 
+    margin-left: 2em;
+    position: fixed;
+  }
 }
