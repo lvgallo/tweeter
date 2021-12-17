@@ -22,4 +22,5 @@ This project was built using HTML, CSS, JS, jQuery and AJAX front-end skills, an
 ## Screenshots
 
 !["Screenshot of Tweeter page - Desktop screen size"](https://github.com/lvgallo/tweeter/blob/master/docs/tweeter_Desktop.png?raw=true)
+
 !["Screenshot of Tweeter page - Tablet screen size"](https://github.com/lvgallo/tweeter/blob/master/docs/tweeter_Tablet.png?raw=true)
