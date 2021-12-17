@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone with responsive design for a variety of screen devices.
 
 This project was built using HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Express back-end skills.
 
