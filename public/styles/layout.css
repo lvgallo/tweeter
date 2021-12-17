@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+ 
+/* Tablet style - between 768px to 1024px */
 html {
   box-sizing: border-box;
 }
@@ -10,21 +12,17 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
- 
- body {
-   color: #545149;
-   background-color: #f4f1ec;
-   font-size: 24px;
-   font-family: 'Source Sans Pro', sans-serif;
-   align-items: center;
-   justify-content: center;
-  }
- 
-  .container {
+.main-container {
   width: 90%;
   margin: auto;
   display: flex; 
@@ -32,9 +30,16 @@ html {
   align-items: center;
   justify-content: center;
   background-color: #f4f1ec;
+  margin-bottom: 30px;
+}
 
+/* Desktop style - 1024px and above */
+@media only screen and (min-width: 1024px) {
+    
+  .main-container {
+    width: 60%;
+    float: right;
+    margin-top: 150px;
+    margin-right: 30px;
   }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+}
