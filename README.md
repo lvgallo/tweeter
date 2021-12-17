@@ -16,3 +16,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of Tweeter page - Desktop screen size"](https://github.com/lvgallo/tweeter/blob/master/docs/tweeter_Desktop.png?raw=true)
+!["Screenshot of Tweeter page - Tablet screen size"](https://github.com/lvgallo/tweeter/blob/master/docs/tweeter_Tablet.png?raw=true)
