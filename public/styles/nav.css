@@ -1,3 +1,4 @@
+/* Tablet style - Desktop Style */
 nav {
   height: 120px;
   width: 100%;
@@ -8,25 +9,28 @@ nav {
   justify-content: space-between;
   position: fixed;
   top: 0
+}
 
- }
 .tweeter {
   font-family: 'Bungee', cursive; 
+  font-size: 40px;
   display: flex; 
   align-items: center 
  }
+
 .blockEnd {
   display: flex;
   flex-direction: column;
   justify-content: center; 
-
 }
+
 .newTweet {
    font-family: 'Source Sans Pro', sans-serif;
    display: flex
-  }
+}
+
 .fas {
     color: red;
     display: flex;
     justify-content: center
-  }
+}
