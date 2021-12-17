@@ -31,7 +31,7 @@ $(document).ready(function() {
       "created_at": 1461113959088
     }
   ];
-  
+   
   const createTweetElement = function(data) {
     const time = timeago.format(data.created_at);
     const tweetElement =
@@ -58,11 +58,8 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(data) {
-    // loops through tweetss
     for (let tweet of data) {
-      // calls createTweetElement for each tweet
       const showTweet = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
       $('#tweets-container').prepend(showTweet);
     }
   };
@@ -107,5 +104,3 @@ $(document).ready(function() {
 
   loadTweets();
 });
-
-  

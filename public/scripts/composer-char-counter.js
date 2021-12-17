@@ -11,6 +11,5 @@ $(document).ready(function() {
     } else {
       counter.css("color", "black");
     }
-        
-  })
+  });
 });
