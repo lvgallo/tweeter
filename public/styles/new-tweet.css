@@ -1,3 +1,4 @@
+/* Tablet style - between 768px to 1024px */
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -72,11 +73,6 @@ article.tweet header {
   font-weight: 600;
 } 
 
-.avatar {
-  display: flex;
-  height: 45px;
-  width: 45px
-}
 .account {
   font-weight: 600;
   opacity: 0.5;
@@ -105,23 +101,18 @@ article.tweet footer {
 .fa-flag {
   color: #005bdb; 
 }
-
 .fa-retweet{
   color: #005bdb; 
 }
-
 .fa-heart{
   color: #005bdb; 
 }
-
 .fa-flag:hover {
   color: #b6ab15; 
 }
-
 .fa-retweet:hover {
   color: #b6ab15; 
 }
-
 .fa-heart:hover {
   color:#b6ab15; 
 }
@@ -137,4 +128,28 @@ article.tweet footer {
   display: none;
   font-weight: 600;
   justify-items: space-around;
+}
+
+
+/* Desktop style - 1024px and above */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 100%;
+  }
+  
+  textarea {
+    width: 100%
+  }
+
+  .buttonCounter {
+    width: 100%
+  }
+
+  article {
+    width: 100%;
+  }
+
+  #tweets-container {
+    width:100%;
+  }
 }
