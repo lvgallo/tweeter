@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  (document).getElementById("tweet-text").addEventListener("keyup",function() {
+  (document).getElementById("tweet-text").addEventListener("input",function() {
     let inputChars = ($(this).val()).length;
     let charLeft = (140 - inputChars);
 
