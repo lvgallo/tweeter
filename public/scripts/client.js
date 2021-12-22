@@ -31,9 +31,12 @@ $(document).ready(function() {
       "created_at": 1461113959088
     }
   ];
-   
+  //  
   const createTweetElement = function(data) {
+    //Calculate time between now and date created
     const time = timeago.format(data.created_at);
+    //Create Tweet posts with name, handle, avatars, data and time
+    //Escape(data.content/text) to deal with insecure text
     const tweetElement =
     `<article class='tweet'>
     <header>
@@ -56,7 +59,8 @@ $(document).ready(function() {
     `;
     return tweetElement;
   };
-
+  
+  // Returned Value from createdTweetElement and post the most recent on top of the list
   const renderTweets = function(data) {
     for (let tweet of data) {
       const showTweet = createTweetElement(tweet);
@@ -67,13 +71,16 @@ $(document).ready(function() {
   $('.compose-tweet').submit(function(event) {
     $(".error").css("display", "none");
     event.preventDefault();
-    const dataSerialized = $(this).serialize();
+    //Serialize data from form
+    const dataSerialized = unescape($(this).serialize());
+    //Validate tweet length. 'text=' needs to be desconsiderated as comes with serialized default message
     if (dataSerialized === 'text=') {
       $(".error").text("Did you write a message?").slideDown();
-    } else if (dataSerialized.length > 140) {
+    // 140 characters + 5 ('text=')
+    } else if (dataSerialized.length > 145) {
       $(".error").text("Too long! Your post should have no more than 140 characters!").slideDown();
     } else {
-      $.ajax({
+        $.ajax({
         url: '/tweets/',
         method: 'POST',
         data: dataSerialized
@@ -95,7 +102,7 @@ $(document).ready(function() {
       renderTweets(tweet);
     });
   };
-  
+  //Escape Function to deal with insecure text
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
